@@ -20,7 +20,7 @@ def main():
    
     
 
-    squad_df["target_text"] = squad_df["target_text"].apply(lambda x: squad_df["target_text"]["text"][x])
+    squad_df["target_text"] = squad_df["target_text"].apply(lambda x: squad_df["target_text"]["text"][°])
     merged_df = pd.concat([squad_df,cour_df],axis=0)
     merged_df = merged_df.sample(frac=1).reset_index(drop=True)
 
