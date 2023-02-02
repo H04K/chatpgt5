@@ -40,7 +40,7 @@ def main():
     df.insert(0, 'prefix', 'QA: ') 
     print(df.head())
     #make everything as string
-    df = df.dropna()
+    df =
     df = df.astype(str)
     model = make_model("t5","t5-small")
     model.train_model(df)
