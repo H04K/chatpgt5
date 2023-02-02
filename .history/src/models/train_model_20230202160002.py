@@ -35,8 +35,7 @@ def make_model(type,name):
 
 
 def main(): 
-    dataset = load_dataset("Dipl0/QA_SMART_FULL_V0.1")
-    df = pd.DataFrame.from_dict(dataset['train'])
+    
     model = make_model("t5","t5-small")
     model.train_model(df)
     

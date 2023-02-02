@@ -10,9 +10,8 @@ wandb.login()
 
 import pandas as pd 
 
-from datasets import load_dataset
 
-
+    
 def make_model(type,name):
     model_args = T5Args()
     model_args.num_train_epochs = 1
@@ -35,8 +34,6 @@ def make_model(type,name):
 
 
 def main(): 
-    dataset = load_dataset("Dipl0/QA_SMART_FULL_V0.1")
-    df = pd.DataFrame.from_dict(dataset['train'])
     model = make_model("t5","t5-small")
     model.train_model(df)
     
