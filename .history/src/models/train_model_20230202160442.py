@@ -38,7 +38,7 @@ def main():
     dataset = load_dataset("Dipl0/QA_SMART_FULL_V0.1")
     df = pd.DataFrame.from_dict(dataset['train'])
     df.insert(0, 'prefix', 'QA: ') 
-    print(df.head())
+    display(df.head())
     #make everything as string
     df = df.astype(str)
     model = make_model("t5","t5-small")
