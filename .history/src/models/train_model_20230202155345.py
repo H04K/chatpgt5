@@ -26,7 +26,7 @@ def make_model(type,name):
     model_args.preprocess_inputs = False
     model_args.use_multiprocessing = False
     model_args.overwrite_output_dir = True
-    model_args.save_steps = 5000
+    model_args.save_steps
     model_args.max_length = 2048
     model_args.length_penalty =1.5
     model_args.fp16 = False
