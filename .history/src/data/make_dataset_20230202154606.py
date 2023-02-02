@@ -6,8 +6,6 @@ from datasets import load_dataset
 
 
 def main():
-    Squad = load_dataset("squad_v2")
-    Cour = load_dataset("Dipl0/Cours_QA_MK_2")
     #squad to df
     squad_df = pd.DataFrame.from_dict(Squad['train'])
     squad_df = squad_df[['question','answers']]
