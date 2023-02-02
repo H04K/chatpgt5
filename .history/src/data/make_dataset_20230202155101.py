@@ -18,9 +18,8 @@ def main():
     #cour to df 
     cour_df = pd.DataFrame.from_dict(Cour['train'])
    
-    
-
-    squad_df["target_text"] = squad_df["target_text"].apply(lambda x: squad_df["target_text"][x]["text"])
+    #
+    squad_df["target_text"] = squad_df["target_text"].apply(lambda x: get_element_between_brackets(x))
     merged_df = pd.concat([squad_df,cour_df],axis=0)
     merged_df = merged_df.sample(frac=1).reset_index(drop=True)
 
