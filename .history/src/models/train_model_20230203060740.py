@@ -15,7 +15,7 @@ from datasets import load_dataset
 
 def make_model(type,name):
     model_args = T5Args()
-    model_args.num_train_epochs = 3
+    model_args.num_train_epochs = 
     model_args.reprocess_input_data = True
     model_args.preprocess_inputs = False
     model_args.use_multiprocessing = False
