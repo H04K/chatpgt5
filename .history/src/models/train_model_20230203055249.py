@@ -40,8 +40,9 @@ def main():
     df.insert(0, 'prefix', 'QA: ') 
     df = df.dropna()
     df = df.astype(str)
-    model = make_model("t5","t5-base")
-    model.train_model(df,wandb_name="FULL_QA")
+    df.to_csv("dataset.csv",ignore_index=True,index=False)
+    model = make_model("t5","t5-small")
+    model.train_model("dataset.csv",wandb_name="FULL_QA")
     
     
 if __name__ == '__main__':

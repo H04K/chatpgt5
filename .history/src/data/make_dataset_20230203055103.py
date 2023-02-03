@@ -11,7 +11,7 @@ def main():
     df.insert(0, 'prefix', 'QA: ') 
     df = df.dropna()
     df = df.astype(str)
-    df.to_csv("dataset.csv",ignore_index=True,index=False)
+    df.to_csv("data")
 
 if __name__ == '__main__':
     main()

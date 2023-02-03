@@ -9,9 +9,9 @@ def main():
     dataset = load_dataset("Dipl0/QA_SMART_FULL_V0.1")
     df = pd.DataFrame.from_dict(dataset['train'])
     df.insert(0, 'prefix', 'QA: ') 
+    print(df.head())
     df = df.dropna()
     df = df.astype(str)
-    df.to_csv("dataset.csv",ignore_index=True,index=False)
 
 if __name__ == '__main__':
     main()

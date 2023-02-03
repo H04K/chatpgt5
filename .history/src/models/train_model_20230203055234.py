@@ -35,13 +35,13 @@ def make_model(type,name):
 
 
 def main(): 
+    #get element from argsparser    
+    model_type = "t5-small"
+    model_name = "t5-small"
+    model = make_model(model_type,model_name)
     dataset = load_dataset("Dipl0/QA_SMART_FULL_V0.1")
     df = pd.DataFrame.from_dict(dataset['train'])
-    df.insert(0, 'prefix', 'QA: ') 
-    df = df.dropna()
-    df = df.astype(str)
-    model = make_model("t5","t5-base")
-    model.train_model(df,wandb_name="FULL_QA")
+    
     
     
 if __name__ == '__main__':

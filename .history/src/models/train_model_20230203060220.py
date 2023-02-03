@@ -28,6 +28,7 @@ def make_model(type,name):
     model_args.top_k =  0
     model_args.num_return_sequences=  1
     model_args.num_beams = 4
+    model_args.ev
     model_args.repetition_penalty = 2.5
     model_args.wandb_project = "FULL_QA"
     model = T5Model(type,name, args=model_args)
@@ -40,8 +41,9 @@ def main():
     df.insert(0, 'prefix', 'QA: ') 
     df = df.dropna()
     df = df.astype(str)
+    df.to_csv("dataset.csv",ignore_index=True,index=False)
     model = make_model("t5","t5-base")
-    model.train_model(df,wandb_name="FULL_QA")
+    model.train_model("dataset.csv",wandb_name="FULL_QA")
     
     
 if __name__ == '__main__':

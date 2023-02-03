@@ -41,7 +41,7 @@ def main():
     df = df.dropna()
     df = df.astype(str)
     model = make_model("t5","t5-base")
-    model.train_model(df,wandb_name="FULL_QA")
+    model.train_model("dataset.csv",wandb_name="FULL_QA")
     
     
 if __name__ == '__main__':
